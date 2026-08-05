@@ -1,0 +1,44 @@
+{
+  "@context": "../../context/source.context.jsonld",
+  "@type": "dcat:Dataset",
+  "@id": "https://biobricks.ai/bricks/ontox_bayer",
+  "dcterms:title": "ontox_bayer (unpopulated brick template)",
+  "dcterms:description": "A BioBricks brick repository named ontox_bayer whose build pipeline has never been populated with a real upstream data source. The download stage (stages/01_download.sh) has an empty FTP base URL (ftpbase=\"\"), the stages are the unmodified brick-template scripts, the GitHub README is the generic \"How to build bricks\" template, and dvc.lock still references the template's example data/mtcars.parquet. No upstream dataset or license can be determined from the repository.",
+  "dcterms:license": "NOASSERTION",
+  "biobricks:licenseName": "Unknown",
+  "biobricks:licenseClass": "unknown",
+  "biobricks:merckCommercialUse": "unknown",
+  "biobricks:licenseEvidence": [
+    {
+      "source": "stages/01_download.sh",
+      "quote": "# Define the FTP base address\nftpbase=\"\"",
+      "confidence": "high"
+    },
+    {
+      "source": "dvc.lock",
+      "quote": "cmd: Rscript stages/01-stage.R ... - path: data/mtcars.parquet",
+      "confidence": "high"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/biobricks-ai/ontox_bayer/main/README.md",
+      "quote": "# How to build bricks\n\n1. Create a brick named `{newbrick}` from this template",
+      "confidence": "high"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/biobricks-ai/ontox_bayer/main/LICENSE",
+      "quote": "HTTP 404 - no LICENSE file present in the repository",
+      "confidence": "high"
+    }
+  ],
+  "biobricks:reviewed": false,
+  "biobricks:reviewNotes": "Determined by Claude annotation agent. The repository name ontox_bayer suggests an intent to build a brick from Bayer-contributed data associated with the EU ONTOX project, but the brick was never actually populated: the download stage has an empty ftpbase, the dvc.lock is the unmodified brick-template example (data/mtcars.parquet), and the GitHub README/history (single \"Initial commit\") is the plain brick template. There is no upstream URL, no data, and no license statement anywhere in the repo. Recorded as UNSTATED / unknown. HUMAN MUST CHECK: whether a real ONTOX/Bayer source was ever intended and, if so, its access terms (ONTOX data and Bayer proprietary data may be controlled-access or restricted); this brick may simply be an abandoned/empty template that should be excluded from the catalog.",
+  "prov:wasDerivedFrom": [
+    {
+      "@type": "dcat:Dataset",
+      "@id": "https://github.com/biobricks-ai/ontox_bayer",
+      "dcterms:title": "ontox_bayer brick repository (no upstream source configured)",
+      "dcterms:license": "NOASSERTION",
+      "dcat:landingPage": "https://github.com/biobricks-ai/ontox_bayer"
+    }
+  ]
+}
